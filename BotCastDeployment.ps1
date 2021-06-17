@@ -1,5 +1,5 @@
 #install azure module
-Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
+Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force -AllowClobber
 
 #Declare Variables
 $TenantID = ""
