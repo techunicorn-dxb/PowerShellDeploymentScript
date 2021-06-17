@@ -1,8 +1,7 @@
-﻿#install azure module
+#install azure module
 Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
 
 #Declare Variables
-$SPCreds = Get-Credential
 $TenantID = ""
 $SubscriptionID = ""
 $RGName = "" #leave empty if we need to create one
@@ -14,7 +13,7 @@ $githubManifestImagesUrl = "https://raw.githubusercontent.com/techunicorn-dxb/AR
 $TemplateUri = "https://raw.githubusercontent.com/techunicorn-dxb/ARM-Templates/main/BotCast/armtemplate.json"
 
 #connect to Azure Account
-Connect-AzAccount -ServicePrincipal -Credential $SPCreds -Tenant $tenantId -Subscription $SubscriptionID
+Connect-AzAccount -ServicePrincipal -Credential (Get-Credential) -Tenant $tenantId -Subscription $SubscriptionID
 
 #parameters
 $parameters = @{
