@@ -6,7 +6,7 @@ $TenantID = ""
 $SubscriptionID = ""
 $RGName = "" #leave empty if we need to create one
 $ServiceEmailAccount = ""
-$TestTeamId = ""
+$TestTeamId = "" #leave this empty to skip, can configure later as well
 $resourcesPrefix = "" #usually customer shortname
 $workingFolderPath = "" #path to createfolder and create zips
 $githubManifestImagesUrl = "https://raw.githubusercontent.com/techunicorn-dxb/ARM-Templates/main/BotCast"
@@ -32,7 +32,7 @@ $parameters = @{
 #Add test team if passed
 if(!$TestTeamId)
 {
-  $ageList.add( "testTeamId", $TestTeamId )
+  $parameters.add( "testTeamId", $TestTeamId )
 }
 
 #if rg  not present
